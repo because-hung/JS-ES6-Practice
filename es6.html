@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <!-- transition animation 練習 -->
+    <!-- <button style="width: 100px;height: 50px; margin-bottom: 30px;"></button>
+    <div class="box"></div>
+    <h1 class="animated bounceInDown infinite">1123123</h1>
+    <h2 class="animated bounceInDown">55555</h2>
+    <style>
+        .box {
+  width: 100px;
+  height: 100px;
+  background: purple;
+  transition: transform 1s;
+ 
+} 
+
+
+/* .move {
+    transform: translate3d(200px, 0, 0) rotate(360deg);
+  } */
+
+
+/* div{ 
+    animation: top right 2.3s;
+}
+
+
+@keyframes change{
+    from{ background: #4BC0C8;}
+    to{ background: #C779D0;}
+} */
+    </style>
+
+
+
+
+
+
+
+
+-->
+
+
+
+    <script>
+        // // es6 class 原型 繼承
+
+        // class Person{
+        //     constructor(name, age){
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //    sayhi(){
+        //         console.log('hello world');
+        //     }
+        // }
+
+        // var el = new Person('Dan',25);
+        // console.log(el);
+
+        // //class inheritance
+
+        // class boy extends Person {
+        //     boyhi(){
+        //         console.log('hi');
+        //     }
+        // }
+
+        // var f = new boy('ton',32);
+        // console.log(f);
+
+        // //class has own attribute
+        // class girl extends Person{
+        //     constructor(name,age,sex){
+        // super(name,age);
+        // this.sex = sex;
+        //     }
+        //     girlhi(){
+        //         console.log('girl say hello world')
+        //     }
+        // }
+
+        // var v = new girl('mkon',24,'female');
+        // console.log(v);
+        // v.girlhi();
+
+
+        // // inheritance
+        // function Player(name) {
+        //   this.name = name
+        // }
+
+        // // 1. call father side // create self attribute
+
+        // function vipPlayer(name,level){
+        //     Player.call(this,name);
+        //     this.level = level ;
+        // }
+
+        // // 2. create connection // inheritance self
+
+        // vipPlayer.prototype = Object.create(Player.prototype);
+
+        // // 3. constructor point to self
+        // vipPlayer.prototype.constructor = vipPlayer.constructor;
+
+        // // father method
+        //  Player.prototype.toString = function() {
+        //     console.log('father')
+        //  }
+        //  // child method
+        //  vipPlayer.prototype.sayhi = function(){
+        // console.log('child');
+        //  }
+
+        // var kevin = new vipPlayer('yuki',6);
+        // console.log(kevin);
+        // kevin.toString();
+        // kevin.sayhi();
+
+
+
+
+
+
+        // // proto 原型練習
+
+        // function Player(name) {
+        //   this.name = name
+        // }
+
+        // const newPlayer = new Player('Inori')
+        // console.log(newPlayer.age)
+
+        // Player.prototype.age = 11
+        // console.log(newPlayer.age)
+
+        // Player.prototype.toString = function() {
+        //     return 'Name: ' + this.name
+        // }
+
+        // console.log(newPlayer.toString())
+        // console.log(newPlayer) //觀察物件的內容
+
+        // var Gameplayer = new Player('Janet');
+        // console.log(Gameplayer); 
+
+        //         //construtor new 
+
+        // function Person(firstN,lastN){
+        //     this.firstN = firstN;
+        //     this.lastN = lastN;
+        // }
+        // var john = new Person('Danny','Sam');
+        // console.log(john);
+        // var mary = new Person('nary','tylor');
+        // console.log(mary);
+
+
+
+        //JQuery
+
+        //  $('button').click(function(){
+        // $('.box').fadeToggle();
+        //  });      
+
+
+
+        // //   async 同步練習
+
+        // async function run() {
+        //     return 'run fast';
+        // }
+        // async function failed() {
+        //     throw 'error + failed'
+        // }
+
+        // // run().then(result=>{
+        // //     console.log(result);
+        // // })
+
+        // //await
+
+        // (async () => {
+        //     let a = await run();
+        //     console.log('a', a);
+        //     try {
+        //         let c = await failed();
+        //     } catch (e) {
+        //         console.log('c', e);
+        //     }
+
+        // })()
+
+
+
+
+
+
+
+
+
+
+        // // promise  練習
+
+        // function promise(num) {
+        //     return new Promise((resolve, reject) => {
+        //         num ? resolve('success + resolve') :
+        //             reject('err + fail');
+        //     })
+        // }
+
+
+        // promise(1)
+        //     .then(success => {
+        //         console.log('p1', success);
+        //         return promise(2);
+        //     })
+        //     .then(success => {
+        //         console.log('p2', success);
+        //         return promise(0);
+        //     })
+        //     .then(success => {
+        //         console.log('p3', success);
+        //         return promise(3);
+        //     })
+        //     .catch(fail => {
+        //         console.log(fail);
+        //     })
+
+
+
+
+
+
+        // //test  //取只出現一次的數字
+
+        // var arr = [1, 3, 5, 3, 2, 4, 2];
+
+
+        // // // const NewArr = ([...new Set(arr)]) ;
+        // // // console.log(NewArr)
+
+        // function newarry(arr) {
+        //     const empty = [];
+
+        //     arr.forEach((item) => {
+        //         var num = empty.indexOf(item); //陣列裡面數字的位置
+        //         console.log(item);
+        //         if (num !== -1) { //indexOf 陣列裡面沒含item的話  回傳 -1 
+        //             if (item == empty[num]) //item 跟 陣列裡面數字 一樣
+        //             {
+
+        //                 empty.splice(num, 1); //刪掉之前傳入的數字
+        //             }
+
+
+        //         } else {
+        //             empty.push(item); //如果為false 回傳陣列裡面
+        //         }
+
+
+        //     });
+        //     return empty;
+        // }
+
+        // console.log(newarry(arr));
+
+
+
+        // test  // 取不重複的值
+
+        // var arr = [1, 1, 2, 2, 3, 3, 4];
+
+
+        // // const NewArr = ([...new Set(arr)]) ;
+        // // console.log(NewArr)
+        // function newarry(arr){
+        //   const empty=[];
+
+        //   arr.forEach((item) =>{
+
+        //     if(empty.includes(item)){
+        //       return '';
+        //     }
+        //     else {
+        //       empty.push(item);
+        //     }
+
+
+        // });
+        // return empty;
+        //   }
+
+
+
+        // console.log(newarry(arr));
+
+
+        // var empty=[];
+
+        //   for(var i = 0 ; i<arr.length;i++){
+
+        //     var item = arr[i] ;
+
+        //     if(empty.includes(item)){
+        //      '';
+        //     }
+        //     else {
+        //       empty.push(item);
+        //     }
+
+        //   }
+
+
+
+
+
+        // console.log(empty);
+        //**************
+        // var origin = [1, 1, 2, 2, 3, 3, 4];
+        // var result = origin.reduce((obj, item) => {
+
+        //   console.log(obj); 
+        //   console.log(item); 
+        //   obj[item] = obj[item] ? obj[item] : 1;
+
+        //     return obj;
+        // }, {});
+        // console.log(result); 
+
+
+        //**********
+        // String.prototype.toNumber = function(){
+        //   return parseInt(this);
+
+        // }
+
+        // var a = new String('aaa');
+        // console.log(a);
+
+        // if ("100".toNumber() === 100) {
+        //   console.log('ok');
+
+
+        // }
+
+
+        // function promise() {
+        //   return new Promise((resolve, reject) => {
+        //     // 隨機取得 0 or 1
+        //     const num = Math.random() > 0.5 ? 1 : 0;
+
+        //     // 1 則執行 resolve，否則執行 reject
+        //     if (num) { 
+        //       console.log(num);
+        //       resolve('成功123');
+
+        //     } else{
+        //       console.log(num);
+        //     reject('失敗')
+
+        //     }
+
+        //   });
+        // }
+        // // promise.then(onFulfilled, onRejected);
+        // // 前者為 resolve callback，後者則為 reject
+        // promise()
+        //   .then((success) => {
+        //     console.log(success);
+        //   }).catch (fail => {
+        //     console.log(fail);
+        //   })
+
+
+
+
+
+
+        //array 
+
+        // var family =[{
+        //   name: 'ming',
+        //   color : 'yellow'
+
+        // }];
+
+        // var array = [];
+
+        // family.forEach((item) => {
+        //   array.push(item);
+        // })
+
+
+        // array[0].name = 'howhow';
+        // console.log(family);
+        // console.log(array);
+
+
+        //原型練習
+
+        // function PhoneTemplate(brand, modal, withCamera) {
+        //   this.brand = brand;
+        //   this.modal = modal;
+        //   this.withCamera = withCamera || false;
+
+        // }
+
+
+        // PhoneTemplate.prototype.takePhoto = function () { 
+        //     if (this.withCamera) { 
+        //       console.log(this.modal + ' 照相');
+        //     } else {
+        //       console.log(this.modal + ' 這台沒有照相功能');
+        //     }
+        //   } 
+
+
+        // PhoneTemplate.prototype.callSomeone = function (someone) {
+        //   console.log('打通電話給 ' + someone);
+        // }
+
+        // var sonyPhone = new PhoneTemplate('Sony', 'Z100', true);
+        // var nokiaPhone = new PhoneTemplate('Nokia', '3310', false);
+
+        // var Ntr = function ( brand, modal, withCamera, read) {
+        //     PhoneTemplate.call(this,brand, modal, withCamera);
+        //     this.read = read;
+
+
+        // }
+
+        // Ntr.prototype = Object.create(PhoneTemplate.prototype);
+        // Ntr.prototype.constructor = Ntr.constructor;
+
+        // var htc = new Ntr('htc','bf',true,'123');
+
+
+        // (function () {
+        //     console.log('A');
+
+        // }());
+
+        // (function () {
+        //     console.log('B');
+
+        // });
+
+
+        // function myMoney(storage) {
+        //     var money = storage || 10000;
+        //     return function(price) {
+        //         return{
+        //             nowMoney: function() {
+        //                 return console.log('目前money:' + money);
+
+        //             },
+        //             count: function(price) {
+
+        //                 if(money < price) return console.log('不足');
+        //                 if(!money <= 0 ){
+        //                     return money = money - price;
+        //                 }
+        //                 return console.log('err');
+        //             }
+        //         }
+        //     }
+
+        // }
+
+        // var casper = myMoney(10000);
+        // casper().count(8000);
+        // casper().nowMoney();
+
+
+        // function aaa(nnn) {
+        //     var money = nnn || 10000;
+        //     console.log(money);
+        // }
+
+
+        // aaa();
+
+
+
+
+
+
+
+
+
+        //this 練習
+        // var name ="小名";
+        // var obj = {
+        //    x:()=>{
+        //        name  = '王';
+        //        console.log(this.name);
+        //    },
+        //    y:'2',
+        // }
+        // obj.x();
+        //    var name ="名";
+        //     function callName(name) {
+        //         console.log(this.name);
+        //     }
+
+        //     var obj = {
+        //         name:'美',
+        //         family:{
+        //             name:'王',
+        //         },
+        //     };
+        //     callName.name = '光';
+        //     var a = callName.bind(obj, '成');
+        //     a();
+        // var name = 'ALL';
+        // var auntie = {
+        //       name:'阿姨',
+        // }
+        // callName(undefined,'名');
+        // callName.call(auntie,'名');
+
+
+        // var auntie = {
+        //     name:'阿姨',
+        //     callName: callName,
+        //     watch: {
+        //         name:'MG',
+        //         callName: callName
+        //     }
+        // }
+
+        // auntie.callName();
+        // auntie.watch.callName();
+        // var a = function () {
+        //     a = 1 ;
+        // }
+        // a.leng = 'En';
+        // console.log(a.leng);
+        // console.log(a);
+        // var b = a ;
+
+        // b.leng = 'CH';
+
+        // console.log(a.leng);
+        // console.log(b.leng);
+
+        // var family =[{
+        // name:'小名家',
+        // members:{
+        //     father:'dad',
+        //     Mom:"MOMM",
+        //     ming:'小名'
+        // }
+
+
+        // }];
+
+        // var array = [];
+        // family.forEach((item) => {
+        //     array.push(item);
+        // })
+
+
+        // array[0].members.ming = 'casper';
+        // console.log(array);
+        // console.log(family[0].members.ming);
+        // console.log(array[0].members.ming);
+
+
+
+        // var a = {};
+        // console.log(a);
+        //             if (a) {
+        //                 console.log(a)
+        //                 console.log('true')
+        //             } else {
+        //                 console.log('err')
+        //             }
+
+        // var a = 1
+        // (function () {
+        //     console.log(a);
+        // })()
+
+
+        // function fn1(){
+        // return new Promise((resolve,reject) =>{
+        //     setTimeout(() => {
+        //             console.log(1);
+        //      resolve();
+        //         }, 0)
+        // })
+
+
+        // }
+        // function fn2(){
+        //     console.log(2);
+        // }
+
+        // function test(){
+        //     console.log("test");
+        // fn1().then(fn2);
+        // }
+
+        // test();
+
+
+
+        // function sayhi (a){
+        //     console.log(a);
+        //     var a="tom";
+        //     console.log('t0',a);
+        // }
+        // console.log(a);
+        // var a = 'Mom';
+        // console.log('call',a);
+        // sayhi(a);
+        // console.log(a);
+
+        // var name = 'All';
+        // var tom = {
+        //     name:"boy",
+        //     callName: function(){
+        //         console.log('all',this.name);
+        //     }
+        // };
+        // (function(){
+
+        //     tom.callName();
+        // })();
+    </script>
+</body>
+
+</html>
